@@ -1,0 +1,34 @@
+name: Deploy to AWS Lambda
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout Code
+          uses: actions/checkout@v3
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+        
+        - name: Install Dependencies
+          run: npm install
+
+        - name: Zip Files
+          run: zip -r app.zip server.js index.html node_modules
+
+        - name: Deploy to AWS Lambda
+          uses: appleboy/lambda-action@v1.0.0
+          with:
+            access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            region: af-south-1
+            function_name: HelloTevlen
+            zip_file: app.zip
