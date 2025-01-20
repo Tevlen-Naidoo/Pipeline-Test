@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Tevlen-Naidoo/Pipeline-Test/issues"
   },
-  "homepage": "https://github.com/Tevlen-Naidoo/Pipeline-Test#readme"
+  "homepage": "https://github.com/Tevlen-Naidoo/Pipeline-Test#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
