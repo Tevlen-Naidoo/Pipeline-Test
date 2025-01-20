@@ -1,0 +1,20 @@
+{
+  "name": "pipeline-test",
+  "version": "1.0.0",
+  "description": "Just testing things out",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tevlen-Naidoo/Pipeline-Test.git"
+  },
+  "author": "Tevlen Naidoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tevlen-Naidoo/Pipeline-Test/issues"
+  },
+  "homepage": "https://github.com/Tevlen-Naidoo/Pipeline-Test#readme"
+}
