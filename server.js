@@ -1,16 +1,12 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
+const serverless = require('serverless-http');
 
 const app = express();
-const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
-    // res.sendFile(path.join(__dirname, '/index.html'));
-    res.writeHead(200, {"content-type": "text/html"});
-    res.write('Hello World!');
-    res.end();
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
-app.listen(port);
-// console.log(`Server started at http://localhost:${port}`);
+module.exports.handler = serverless(app);
 
